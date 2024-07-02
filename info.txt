@@ -1,0 +1,1 @@
+This is a JavaScript Library name as Shery.js by sheryiansCodingSchool
