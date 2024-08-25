@@ -110,7 +110,7 @@ body {
   left: 0;
   line-height: 0.9;
   color: #fff;
-  font-family: "kajiro";
+  font-family: kajiro;
   font-weight: 100;
   font-size: 11vw;
 }
@@ -118,16 +118,19 @@ body {
 #heroLeft button {
   border: 1px solid #fff;
   cursor: pointer;
-  pointer-events: all;
-  padding: 1vw 1.5vw;
+  /* pointer-events: none; */
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding: 1vw 3vw;
   mix-blend-mode: difference;
   font-size: 3vw;
   margin-top: 2vw;
   font-family: "kajiro";
+  font-weight: 200;
   text-align: center;
   letter-spacing: 3px;
   transition: all ease-in-out 0.3s;
-  background-color: #00000043;
+  background-color: #0000004f;
   color: #fff;
 }
 
@@ -192,7 +195,7 @@ body {
 
 #loader-data h1 {
   font-weight: 600;
-  font-family: gilroy;
+  font-family: sans-serif;
   color: #dadada;
   font-size: 12vw;
 }
@@ -203,4 +206,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #dadada;
+}
+
+@font-face {
+  font-family: Kajiro;
+  src: url(./Kajiro\ Bold.ttf);
 }
