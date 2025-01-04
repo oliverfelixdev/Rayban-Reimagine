@@ -49,7 +49,7 @@ body {
   /* border: 1px solid red; */
 }
 
-#nav {
+/* #nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,6 +76,60 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   color: #fff;
+} */
+
+/* Navigation */
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px 0;
+}
+
+#nav img {
+  height: 50px;
+}
+
+#nleft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#menu-btn {
+  display: none; /* Hidden by default, will show on mobile */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+#nright {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+#nav a {
+  pointer-events: all;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 60px;
+}
+
+.nav-links.hidden {
+  display: none; /* Hide links on mobile by default */
 }
 
 #hero {
@@ -88,6 +142,8 @@ body {
   width: 100%;
   /* height: 100px; */
 }
+
+
 
 #heroLeft {
   min-width: 50%;
@@ -159,7 +215,7 @@ body {
   margin-bottom: 10px;
   width: 100%;
   height: 100px;
-  background-image: url("https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80");
+  background-image: url("https://india.ray-ban.com/media/wysiwyg/Banner-01-_3_.jpg");
   background-size: cover;
   filter: grayscale(9);
   border-radius: 5px;
@@ -171,44 +227,88 @@ body {
 }
 
 .loader__body {
-  padding: 7vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
-  z-index: 999;
   background-color: #000;
   position: fixed;
   top: 0;
-  /* left: 0; */
-  transition: all linear 0.5s;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
 }
 
 #loader-data {
+  position: relative;
+  display: inline-block;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
 }
 
 #loader-data img {
-  height: 20vh;
+  filter: invert(1);
+  transform: scale(0.5);
 }
 
-#loader-data h1 {
-  font-weight: 600;
-  font-family: sans-serif;
-  color: #dadada;
-  font-size: 12vw;
-}
-
-.loader__body span {
+.skeleton {
   position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #dadada;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: skeleton-animation 1.5s infinite linear;
+  border-radius: 10px;
+}
+
+@keyframes skeleton-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @font-face {
   font-family: Kajiro;
-  src: url(./Kajiro\ Bold.ttf);
+  src: url(./assets/KajiroBold.ttf);
+}
+
+@media screen and (max-width: 768px) {
+  #nright {
+    display: none;
+  }
+
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    color: #fff;
+  }
 }

@@ -56,33 +56,17 @@ elems.forEach(function (elem) {
   });
 });
 
-gsap.from(".loaderHedings", {
-  duration: 1.5,
-  y: "100%",
-  rotate: "15",
-  ease: "easeIn.expo",
-  opacity: 0.2,
+window.addEventListener("load", function () {
+  gsap.to(".loader__body", {
+    duration: 4,
+    y: "-110%",
+    ease: Expo.easeInOut,
+    onComplete: function () {
+      document.querySelector(".loader__body").style.display = "none";
+    }
+  });
 });
 
-gsap.from(".loaderimg", {
-  duration: 1.5,
-  x: "-100%",
-  opacity: 1,
-  ease: "easeIn.expo",
-});
-
-gsap.from(".loaderSpan", {
-  duration: 1.5,
-  opacity: 0, // Full opacity
-});
-
-function loader() {
-  let loader = document.querySelector(".loader__body");
-  setTimeout(function () {
-    loader.style.top = "-100%";
-  }, 3000);
-}
-loader();
 
 document.addEventListener("contextmenu", function (e) {
   console.log(e);
